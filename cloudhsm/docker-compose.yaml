@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  cluster-setup:
+    build: .
+    env_file: 
+        - .env
+    volumes:
+        - '$HOME/.aws/credentials:/root/.aws/credentials:ro'
+        - '$HOME/wks/keys/cloudhsm:/opt/cloudhsm/certs'
